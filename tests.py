@@ -1,14 +1,14 @@
-from score_card import pins_knocked_over
+from score_card import full_score
 
 TEST_CARDS = {
     # perfect game
-    "X " * 9 + "XXX": 120,
+    "X " * 9 + "XXX": 300,
     #
     # all spares with bonus 1
-    "5/ " * 9 + "5/5": 105,
+    "5/ " * 9 + "5/5": 150,
     #
     # all spares with bonus 2
-    "-/ " + " ".join(f"{i}/" for i in range(1, 10)) + "X": 110,
+    "-/ " + " ".join(f"{i}/" for i in range(1, 10)) + "X": 155,
     #
     # all gutters 1
     " ".join(["-"] * 10): 0,
@@ -26,8 +26,8 @@ TEST_CARDS = {
     (" ".join((f"{i}1" for i in range(9))) + " 9/X").replace("0", "-"): 65,
     #
     # example game
-    "X 7/ 9- X -8 8/ - 72 X X81": 95,
+    "X 7/ 9- X -8 8/ - 72 X X81": 140,
 }
 
 for card, pins in TEST_CARDS:
-    assert pins_knocked_over(card) == pins
+    assert full_score(card) == pins
