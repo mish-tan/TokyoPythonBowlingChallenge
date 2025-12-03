@@ -29,5 +29,15 @@ TEST_CARDS = {
     "X 7/ 9- X -8 8/ - 72 X X81": 140,
 }
 
-for card, pins in TEST_CARDS:
-    assert full_score(card) == pins
+for test_num, (card, pins) in enumerate(TEST_CARDS.items()):
+    try:
+        assert full_score(card) == pins
+        print(f"Success: {card}")
+    except AssertionError as ae:
+        print(f"Failed on test {test_num} with card {card}\n{ae}")
+        raise
+    except Exception:
+        print("Unexpected Error")
+        raise
+
+    print(f"All {test_num} tests passed.")
