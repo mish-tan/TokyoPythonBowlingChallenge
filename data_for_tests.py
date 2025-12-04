@@ -25,4 +25,10 @@ TEST_CARDS = {
     #
     # example game
     "X 7/ 9- X -8 8/ - 72 X X81": 140,
+
+    # what if the last roll is a spare?
+    "X 7/ 9- X -8 8/ - 72 X X8/": 141,
+
+    # what if the last frame contains a spare? 
+    "X 7/ 9- X -8 8/ - 72 X 8/1": 124,
 }
